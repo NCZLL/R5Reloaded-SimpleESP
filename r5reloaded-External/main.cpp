@@ -156,10 +156,11 @@ void OverlayManager()
             ClientToScreen(TempHwnd, &tmpPos);
 
             if (g.GamePoint.x != tmpPos.x || g.GamePoint.x != tmpPos.y)
+            {
                 SetWindowPos(hwnd, NULL, tmpPos.x, tmpPos.y, tmpRect.right, tmpRect.bottom, SWP_NOREDRAW);
-
-            g.GameSize = tmpRect;
-            g.GamePoint = tmpPos;
+                g.GameSize = tmpRect;
+                g.GamePoint = tmpPos;
+            }
         }
         else if (!TempHwnd)
         {
